@@ -1,5 +1,7 @@
 # VISPA: Pluralistic Alignment via Automatic Value Selection and Activation
 
+**arXiv (Pre-print) Paper Link:** [link](https://arxiv.org/abs/2601.12758).
+
 Official code for **VISPA** (Value-Integrated Steering for Pluralistic
 Alignment), a training-free framework that automatically selects
 scenario-relevant human values from a 31-value pool and steers an LLM's
