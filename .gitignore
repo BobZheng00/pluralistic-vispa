@@ -1,0 +1,19 @@
+# External dependencies (cloned by scripts/setup_dependencies.*, not vendored)
+third_party/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# Trained steering artifacts (large, regenerable — see steering/README.md)
+saved/
+
+# Secrets
+.env
+*_api_key.txt
+
+# OS / editor
+.DS_Store
+.vscode/

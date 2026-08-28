@@ -1,0 +1,223 @@
+{
+  "total_samples": 11963,
+  "num_datasets": 10,
+  "values": {
+    "tradition": {
+      "top1_count": 32,
+      "top1_percent": 0.26749143191507146,
+      "top6_count": 718,
+      "top6_percent": 6.001839003594416,
+      "avg_score": 0.17343225534883885
+    },
+    "conformity": {
+      "top1_count": 580,
+      "top1_percent": 4.84828220346067,
+      "top6_count": 4029,
+      "top6_percent": 33.678843099556964,
+      "avg_score": 0.3471133163761628
+    },
+    "power": {
+      "top1_count": 253,
+      "top1_percent": 2.114854133578534,
+      "top6_count": 2765,
+      "top6_percent": 23.112931538911642,
+      "avg_score": 0.2755284768162834
+    },
+    "achievement": {
+      "top1_count": 486,
+      "top1_percent": 4.062526122210148,
+      "top6_count": 3279,
+      "top6_percent": 27.40951266404748,
+      "avg_score": 0.3192190396014952
+    },
+    "hedonism": {
+      "top1_count": 34,
+      "top1_percent": 0.2842096464097635,
+      "top6_count": 714,
+      "top6_percent": 5.968402574605032,
+      "avg_score": 0.09522470795292118
+    },
+    "stimulation": {
+      "top1_count": 62,
+      "top1_percent": 0.518264649335451,
+      "top6_count": 1128,
+      "top6_percent": 9.42907297500627,
+      "avg_score": 0.16287607247410257
+    },
+    "security": {
+      "top1_count": 107,
+      "top1_percent": 0.8944244754660203,
+      "top6_count": 1103,
+      "top6_percent": 9.22009529382262,
+      "avg_score": 0.17166175276605367
+    },
+    "benevolence": {
+      "top1_count": 1611,
+      "top1_percent": 13.46652177547438,
+      "top6_count": 3652,
+      "top6_percent": 30.527459667307532,
+      "avg_score": 0.3319382272732802
+    },
+    "universalism": {
+      "top1_count": 167,
+      "top1_percent": 1.3959709103067792,
+      "top6_count": 2515,
+      "top6_percent": 21.02315472707515,
+      "avg_score": 0.29949309705688254
+    },
+    "self-direction": {
+      "top1_count": 381,
+      "top1_percent": 3.18481986123882,
+      "top6_count": 2345,
+      "top6_percent": 19.60210649502633,
+      "avg_score": 0.25750327629940967
+    },
+    "commonsense morality": {
+      "top1_count": 839,
+      "top1_percent": 7.013290980523281,
+      "top6_count": 7062,
+      "top6_percent": 59.03201538075733,
+      "avg_score": 0.5233047324406791
+    },
+    "confucianism": {
+      "top1_count": 31,
+      "top1_percent": 0.2591323246677255,
+      "top6_count": 1674,
+      "top6_percent": 13.993145532057177,
+      "avg_score": 0.2242337014527452
+    },
+    "deontology": {
+      "top1_count": 2,
+      "top1_percent": 0.016718214494691967,
+      "top6_count": 328,
+      "top6_percent": 2.7417871771294826,
+      "avg_score": 0.0903655707820075
+    },
+    "face": {
+      "top1_count": 3,
+      "top1_percent": 0.025077321742037948,
+      "top6_count": 46,
+      "top6_percent": 0.38451893337791526,
+      "avg_score": 0.059902702482472654
+    },
+    "fairness": {
+      "top1_count": 385,
+      "top1_percent": 3.218256290228204,
+      "top6_count": 5730,
+      "top6_percent": 47.89768452729248,
+      "avg_score": 0.4279154030786316
+    },
+    "harmfulness": {
+      "top1_count": 2676,
+      "top1_percent": 22.368970993897854,
+      "top6_count": 6529,
+      "top6_percent": 54.57661121792192,
+      "avg_score": 0.5163580328411276
+    },
+    "honor": {
+      "top1_count": 32,
+      "top1_percent": 0.26749143191507146,
+      "top6_count": 619,
+      "top6_percent": 5.174287386107164,
+      "avg_score": 0.16293240528241196
+    },
+    "individualism": {
+      "top1_count": 130,
+      "top1_percent": 1.0866839421549779,
+      "top6_count": 1822,
+      "top6_percent": 15.230293404664383,
+      "avg_score": 0.218929728915977
+    },
+    "indulgence": {
+      "top1_count": 200,
+      "top1_percent": 1.6718214494691968,
+      "top6_count": 1789,
+      "top6_percent": 14.954442865501965,
+      "avg_score": 0.23648051263104797
+    },
+    "justice": {
+      "top1_count": 349,
+      "top1_percent": 2.9173284293237485,
+      "top6_count": 4331,
+      "top6_percent": 36.203293488255454,
+      "avg_score": 0.4085799841137106
+    },
+    "karma": {
+      "top1_count": 12,
+      "top1_percent": 0.10030928696815179,
+      "top6_count": 993,
+      "top6_percent": 8.30059349661456,
+      "avg_score": 0.17219168418990907
+    },
+    "long-term orientation": {
+      "top1_count": 389,
+      "top1_percent": 3.2516927192175875,
+      "top6_count": 3431,
+      "top6_percent": 28.68009696564407,
+      "avg_score": 0.2848111714152282
+    },
+    "masculinity": {
+      "top1_count": 10,
+      "top1_percent": 0.08359107247345983,
+      "top6_count": 261,
+      "top6_percent": 2.181726991557302,
+      "avg_score": 0.0805811736558765
+    },
+    "power distance": {
+      "top1_count": 0,
+      "top1_percent": 0.0,
+      "top6_count": 485,
+      "top6_percent": 4.054167014962802,
+      "avg_score": 0.14446087494401602
+    },
+    "spirituality": {
+      "top1_count": 42,
+      "top1_percent": 0.3510825043885313,
+      "top6_count": 184,
+      "top6_percent": 1.538075733511661,
+      "avg_score": 0.04901680269788972
+    },
+    "toxicity": {
+      "top1_count": 5,
+      "top1_percent": 0.041795536236729915,
+      "top6_count": 1846,
+      "top6_percent": 15.430911978600687,
+      "avg_score": 0.2030142718530262
+    },
+    "truthfulness": {
+      "top1_count": 2170,
+      "top1_percent": 18.139262726740785,
+      "top6_count": 5266,
+      "top6_percent": 44.01905876452395,
+      "avg_score": 0.4316234602981553
+    },
+    "ubuntu": {
+      "top1_count": 0,
+      "top1_percent": 0.0,
+      "top6_count": 59,
+      "top6_percent": 0.49318732759341305,
+      "avg_score": 0.06665312232560043
+    },
+    "uncertainty avoidance": {
+      "top1_count": 103,
+      "top1_percent": 0.8609880464766363,
+      "top6_count": 3768,
+      "top6_percent": 31.497116107999666,
+      "avg_score": 0.34638178938225783
+    },
+    "utilitarianism": {
+      "top1_count": 26,
+      "top1_percent": 0.21733678843099558,
+      "top6_count": 895,
+      "top6_percent": 7.481400986374655,
+      "avg_score": 0.1876178399967124
+    },
+    "virtue ethics": {
+      "top1_count": 846,
+      "top1_percent": 7.071804731254702,
+      "top6_count": 2412,
+      "top6_percent": 20.16216668059851,
+      "avg_score": 0.2803079163797365
+    }
+  }
+}
