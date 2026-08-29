@@ -26,6 +26,7 @@ import torch
 from transformers import pipeline
 
 from ._third_party import add_to_path
+from .hyperparameters import PROJECTION_COEFF, to_repe_hidden_layers
 from .interface import SteeringBackend
 
 add_to_path("representation-engineering")
@@ -34,7 +35,7 @@ import repe  # noqa: E402  (RepE, not vendored — see module docstring)
 
 repe.repe_pipeline_registry()
 
-DEFAULT_COEFF = 2.0  # steering strength for the applied direction; tune per model/value as needed
+DEFAULT_COEFF = PROJECTION_COEFF
 
 
 def _pairs_to_repe_format(pos_prompts: List[str], neg_prompts: List[str], seed: int = 0):
@@ -67,7 +68,7 @@ class ProjectionPCASteering(SteeringBackend):
         self.batch_size = batch_size
 
     def fit(self, model, tokenizer, value_slug, pos_prompts, neg_prompts, layers, **kwargs):
-        hidden_layers = [-l for l in layers]  # RepE indexes hidden_layers from the end of the stack (negative ints)
+        hidden_layers = to_repe_hidden_layers(layers, model.config.num_hidden_layers)
         train_data, train_labels = _pairs_to_repe_format(pos_prompts, neg_prompts)
 
         rep_reading_pipeline = pipeline("rep-reading", model=model, tokenizer=tokenizer)

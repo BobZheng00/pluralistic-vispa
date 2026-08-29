@@ -19,6 +19,13 @@ sys.path.insert(0, str(REPO_ROOT))
 sys.path.insert(0, str(REPO_ROOT / "value_selection"))
 
 from steering._third_party import add_to_path  # noqa: E402
+from steering.hyperparameters import (  # noqa: E402
+    AVERAGING_DEFAULT_ALPHA,
+    DEFAULT_LAYER_RANGE,
+    PROBE_P0,
+    PROJECTION_COEFF,
+    get_backend_kwargs,
+)
 
 
 def get_backend(name: str, **kwargs):
@@ -32,6 +39,32 @@ def get_backend(name: str, **kwargs):
         from steering.projection_pca import ProjectionPCASteering
         return ProjectionPCASteering(**kwargs)
     raise ValueError(f"Unknown backend '{name}'. Expected one of: probe_calibrated, averaging_caa, projection_pca.")
+
+
+def add_steering_hyperparameter_args(parser):
+    """Add the paper-aligned steering settings shared by all three modes."""
+    parser.add_argument("--layers", default=DEFAULT_LAYER_RANGE, help="inclusive physical layer range")
+    parser.add_argument("--projection_coeff", type=float, default=PROJECTION_COEFF)
+    parser.add_argument("--averaging_default_alpha", type=float, default=AVERAGING_DEFAULT_ALPHA)
+    parser.add_argument("--probe_p0", type=float, default=PROBE_P0)
+    parser.add_argument(
+        "--probe_skip_noop",
+        action="store_true",
+        help="omit a selected value when probe calibration is a no-op (disabled for paper-aligned runs)",
+    )
+
+
+def get_configured_backend(args):
+    """Instantiate a backend with explicit paper-aligned hyperparameters."""
+    kwargs = get_backend_kwargs(
+        args.backend,
+        args.steering_model,
+        projection_coeff=args.projection_coeff,
+        averaging_default_alpha=args.averaging_default_alpha,
+        probe_p0=args.probe_p0,
+        probe_skip_noop=args.probe_skip_noop,
+    )
+    return get_backend(args.backend, **kwargs)
 
 
 def load_steering_model(backend_name: str, model_path: str):
@@ -79,21 +112,12 @@ def fit_all_values(
     value_slugs: List[str],
     layers: List[int],
     data_dir: str,
-    steering_model_path: str = None,
 ) -> Dict[str, object]:
-    """`steering_model_path` (e.g. 'meta-llama/Meta-Llama-3-8B-Instruct') is
-    only used to look up per-value P0 thresholds for probe_calibrated
-    steering (steering/p0_thresholds.py) — other backends ignore the kwarg."""
-    from steering.p0_thresholds import get_p0
-
     fitted = {}
     for value_slug in value_slugs:
         pos, neg = load_contrastive_pairs(value_slug, data_dir)
         print(f"  fitting '{value_slug}' ({len(pos)} contrastive pairs)...")
-        kwargs = {}
-        if steering_model_path is not None:
-            kwargs["p0"] = get_p0(value_slug, steering_model_path)
-        fitted[value_slug] = backend.fit(steering_model, steering_tokenizer, value_slug, pos, neg, layers, **kwargs)
+        fitted[value_slug] = backend.fit(steering_model, steering_tokenizer, value_slug, pos, neg, layers)
     return fitted
 
 

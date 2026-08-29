@@ -17,10 +17,13 @@ that is precisely what distinguishes this instantiation from probe-calibrated
 steering).
 """
 
+from typing import Optional
+
 import numpy as np
 import torch
 
 from ._third_party import add_to_path
+from .hyperparameters import AVERAGING_DEFAULT_ALPHA, get_averaging_alpha
 from .interface import SteeringBackend
 
 add_to_path("ConVA")
@@ -29,26 +32,28 @@ from src.baselines.caa import get_diff_acts  # noqa: E402  (ConVA, not vendored 
 from src.cav_gen import generate_  # noqa: E402
 
 
-DEFAULT_ALPHA = 0.5  # VISPA's shared default for values without a prior-work-specific coefficient (paper Appendix C.2)
+DEFAULT_ALPHA = AVERAGING_DEFAULT_ALPHA
 
 
 class AveragingCAASteering(SteeringBackend):
     name = "averaging_caa"
 
-    def __init__(self, alpha: float = DEFAULT_ALPHA, model_name: str = "llama-2"):
+    def __init__(self, alpha: Optional[float] = None, default_alpha: float = DEFAULT_ALPHA, model_name: str = "llama-2"):
         self.alpha = alpha
+        self.default_alpha = default_alpha
         self.model_name = model_name
 
     def fit(self, model, tokenizer, value_slug, pos_prompts, neg_prompts, layers, **kwargs):
         start_layer, end_layer = min(layers), max(layers)
         diff_acts = get_diff_acts(model, tokenizer, start_layer, end_layer, pos_prompts, neg_prompts)
+        alpha = self.alpha if self.alpha is not None else get_averaging_alpha(value_slug, self.default_alpha)
 
         steer_vecs = {}
         for layer_name, diff_act in diff_acts.items():
             mean_diff = np.mean(diff_act, axis=0)
-            steer_vecs[layer_name] = self.alpha * torch.tensor(mean_diff).to(model.device)
+            steer_vecs[layer_name] = alpha * torch.tensor(mean_diff).to(model.device)
 
-        return {"layers": [f"model.layers.{l}" for l in layers], "steer_vecs": steer_vecs}
+        return {"layers": [f"model.layers.{l}" for l in layers], "steer_vecs": steer_vecs, "alpha": alpha}
 
     def generate(self, model, tokenizer, prompt, state, **gen_kwargs) -> str:
         model.register_forward_hooks(state["layers"])

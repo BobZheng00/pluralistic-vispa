@@ -22,6 +22,7 @@ w.h) / ||w||^2) per layer (ConVA/src/cav_gen.py).
 from typing import Dict, List
 
 from ._third_party import add_to_path
+from .hyperparameters import PROBE_P0
 from .interface import SteeringBackend
 
 add_to_path("ConVA")
@@ -38,25 +39,19 @@ from src.cav_gen import (  # noqa: E402
 class ProbeCalibratedSteering(SteeringBackend):
     name = "probe_calibrated"
 
-    def __init__(self, p0: float = 0.9, increase: bool = True, model_name: str = "llama-2", use_gate: bool = True):
+    def __init__(self, p0: float = PROBE_P0, increase: bool = True, model_name: str = "llama-2", use_gate: bool = False):
         # `increase`: whether steering should push P_V up (get_plus_epsilon_dict,
         # used to induce the value) or allow it to move either way
         # (get_epsilon_dict). VISPA always induces the selected value, so the
         # default is True.
-        # `use_gate`: if the calibration in `generate` finds epsilon == 0 at
-        # every layer (the value is already at/above P0 pre-steering, or the
-        # probe can't push it there at all), the value isn't meaningfully
-        # present for this input — skip generating a comment for it rather
-        # than steering with a no-op vector.
+        # `use_gate` is an optional release-only behavior. The paper-aligned
+        # default still generates one comment for every selected value.
         self.p0 = p0
         self.increase = increase
         self.model_name = model_name
         self.use_gate = use_gate
 
-    def fit(self, model, tokenizer, value_slug, pos_prompts, neg_prompts, layers, p0: float = None, **kwargs) -> Dict:
-        """`p0` overrides self.p0 for this specific value (see
-        steering/p0_thresholds.py — the paper's experiments used tuned,
-        per-value/per-model P0 thresholds rather than one flat value)."""
+    def fit(self, model, tokenizer, value_slug, pos_prompts, neg_prompts, layers, **kwargs) -> Dict:
         layer_names = [f"model.layers.{l}" for l in layers]
         model.register_forward_hooks(layer_names)
         try:
@@ -71,7 +66,7 @@ class ProbeCalibratedSteering(SteeringBackend):
             cav_dict[layer_name] = cav
             classifier_dict[layer_name] = log_reg
 
-        return {"cav_dict": cav_dict, "classifier_dict": classifier_dict, "p0": p0 if p0 is not None else self.p0}
+        return {"cav_dict": cav_dict, "classifier_dict": classifier_dict, "p0": self.p0}
 
     def generate(self, model, tokenizer, prompt, state, **gen_kwargs):
         """Returns the steered comment, or None if `use_gate` is set and the
