@@ -39,11 +39,10 @@ state = backend.fit(model, tokenizer, "benevolence", pos_prompts, neg_prompts, l
 text = backend.generate(model, tokenizer, prompt, state, max_new_tokens=200)
 ```
 
-The defaults mirror the paper: projection uses coefficient 1.0, averaging
-uses ConVA's released value-specific coefficients for its ten benchmarked
-values and 0.5 otherwise, and probe-calibrated steering uses one fixed P0 of
-0.9. Layer numbers are zero-based physical transformer blocks for every
-backend, including RepE.
+The shared defaults use coefficient 1.0 for projection, ConVA's value-specific
+coefficients for its ten Schwartz values and 0.5 otherwise for averaging, and
+one fixed P0 of 0.9 for probe-calibrated steering. Layer numbers are zero-based
+physical transformer blocks for every backend, including RepE.
 
 `model` is expected to be ConVA's `src.modelwrapper.ModelWrapper` for the two
 ConVA-backed instantiations, and a plain HF `AutoModelForCausalLM` for

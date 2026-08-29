@@ -60,10 +60,10 @@ All three `pipeline/run_*.py` scripts default to `--backend probe_calibrated`
 (the paper's main method); pass `--backend averaging_caa` or
 `--backend projection_pca` to compare instantiations.
 
-### Paper-aligned steering defaults
+### Steering configuration
 
-The end-to-end pipelines use the settings reported in the paper and expose
-the scalar settings as command-line arguments:
+The end-to-end pipelines share the following defaults, which can be overridden
+with command-line arguments:
 
 | Setting | Default | CLI override |
 |---|---:|---|
@@ -72,11 +72,11 @@ the scalar settings as command-line arguments:
 | Averaging fallback coefficient | 0.5 | `--averaging_default_alpha` |
 | Probe confidence threshold | 0.9 (fixed across values/models) | `--probe_p0` |
 
-For averaging-based steering, the ten values benchmarked by ConVA use its
-released value-specific coefficients; the other 21 values use the 0.5
-fallback. Probe-calibrated runs generate one comment per selected value by
-default. `--probe_skip_noop` enables the release-only behavior that omits a
-value when its calibrated intervention is zero at every layer.
+For averaging-based steering, the ten Schwartz values supported by ConVA use
+its value-specific coefficients; the other 21 values use the 0.5 fallback.
+Probe-calibrated runs generate one comment per selected value by default.
+`--probe_skip_noop` omits a value when its calibrated intervention is zero at
+every layer.
 
 The layer range always denotes zero-based physical transformer blocks. The
 RepE backend converts those blocks to RepE's negative indexing internally,
