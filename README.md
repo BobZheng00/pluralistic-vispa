@@ -60,17 +60,25 @@ All three `pipeline/run_*.py` scripts default to `--backend probe_calibrated`
 (the paper's main method); pass `--backend averaging_caa` or
 `--backend projection_pca` to compare instantiations.
 
-## Why some code is fetched, not vendored
+## Dependencies
 
-Two of the codebases this work builds on (ConVA, modular_pluralism) publish
-no LICENSE file on GitHub, which defaults to all-rights-reserved — there's
-no explicit grant to redistribute their code inside this repo. Rather than
-selectively vendor the MIT-licensed one (RepE) and not the others, all three
-get the same treatment: nothing is copied in, `scripts/setup_dependencies.*`
-clones each at a pinned commit into a gitignored `third_party/`, and this
-repo's own code only ever imports from them at runtime. See
-`steering/README.md` for the exact commits and per-file attribution.
+This repository does not vendor code from ConVA or modular_pluralism, as
+neither distributes a license. `scripts/setup_dependencies.sh` (or `.ps1`
+on Windows) clones ConVA, representation-engineering, and modular_pluralism
+at pinned commits into a local `third_party/` directory (gitignored); this
+repository's code imports from `third_party/` at runtime rather than
+including copies of it. See `steering/README.md` for the pinned commits and
+per-module attribution.
 
 ## Citation
 
-Citation details will be updated upon publication.
+```bibtex
+@article{Zheng2026VISPA,
+  title={VISPA: Pluralistic Alignment via Automatic Value Selection and Activation},
+  author={Zheng, Shenyan and Zhong, Jiayou and Shetty, Anudeex and Ji, Heng and Nakov, Preslav and Naseem, Usman},
+  journal={arXiv preprint arXiv:2601.12758},
+  year={2026}
+}
+```
+
+<!-- TODO: replace with the EMNLP 2026 (Main) proceedings citation once available. -->
