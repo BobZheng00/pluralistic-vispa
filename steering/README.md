@@ -34,10 +34,16 @@ This means:
 ## Common interface
 
 ```python
-backend = ProbeCalibratedSteering(p0=0.9)          # or AveragingCAASteering() / ProjectionPCASteering()
+backend = ProbeCalibratedSteering(p0=0.9)          # fixed P0; or AveragingCAASteering() / ProjectionPCASteering()
 state = backend.fit(model, tokenizer, "benevolence", pos_prompts, neg_prompts, layers=range(10, 26))
 text = backend.generate(model, tokenizer, prompt, state, max_new_tokens=200)
 ```
+
+The defaults mirror the paper: projection uses coefficient 1.0, averaging
+uses ConVA's released value-specific coefficients for its ten benchmarked
+values and 0.5 otherwise, and probe-calibrated steering uses one fixed P0 of
+0.9. Layer numbers are zero-based physical transformer blocks for every
+backend, including RepE.
 
 `model` is expected to be ConVA's `src.modelwrapper.ModelWrapper` for the two
 ConVA-backed instantiations, and a plain HF `AutoModelForCausalLM` for

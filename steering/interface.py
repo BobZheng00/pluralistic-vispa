@@ -38,8 +38,8 @@ class SteeringBackend(ABC):
         """Estimate a steering direction (and any backend-specific state) for
         `value_slug` from its context-controlled positive/negative prompts.
         Returns opaque state to pass into `generate`. `**kwargs` carries
-        backend-specific per-value overrides (e.g. probe_calibrated's `p0`);
-        backends that don't use one just ignore it.
+        backend-specific fitting options; backends that don't use one just
+        ignore it.
         """
 
     @abstractmethod

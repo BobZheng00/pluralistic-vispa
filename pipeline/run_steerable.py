@@ -27,7 +27,14 @@ from pathlib import Path
 import torch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import fit_all_values, get_backend, load_aggregator_model, load_steering_model, parse_layers  # noqa: E402
+from common import (  # noqa: E402
+    add_steering_hyperparameter_args,
+    fit_all_values,
+    get_configured_backend,
+    load_aggregator_model,
+    load_steering_model,
+    parse_layers,
+)
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "value_selection"))
 from selection_io import load_selected_values  # noqa: E402
@@ -51,7 +58,7 @@ def main():
     parser.add_argument("--steering_model", default="meta-llama/Meta-Llama-3-8B-Instruct")
     parser.add_argument("--aggregator_model", default="meta-llama/Llama-2-13b-chat-hf")
     parser.add_argument("--backend", default="probe_calibrated", choices=["probe_calibrated", "averaging_caa", "projection_pca"])
-    parser.add_argument("--layers", default="10-25")
+    add_steering_hyperparameter_args(parser)
     parser.add_argument("--data_dir", default=str(Path(__file__).resolve().parent.parent / "data" / "value"))
     parser.add_argument("--comment_max_new_tokens", type=int, default=200)
     args = parser.parse_args()
@@ -62,7 +69,7 @@ def main():
         data = json.load(f)
     selected_values = load_selected_values(args.selection)
 
-    backend = get_backend(args.backend)
+    backend = get_configured_backend(args)
     print(f"Loading steering model ({args.backend}): {args.steering_model}")
     steering_model, steering_tokenizer = load_steering_model(args.backend, args.steering_model)
 
@@ -70,7 +77,6 @@ def main():
     print(f"Fitting steering directions for {len(needed_values)} values...")
     fitted = fit_all_values(
         backend, steering_model, steering_tokenizer, needed_values, layers, args.data_dir,
-        steering_model_path=args.steering_model,
     )
 
     print(f"Generating value-steered comments for {len(data)} items...")
