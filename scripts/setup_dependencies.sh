@@ -30,9 +30,7 @@ clone_pinned "ConVA" "https://github.com/hr-jin/ConVA.git" "9484868882cd42752d1b
 # Projection-based (PCA / RepE) steering instantiation.
 clone_pinned "representation-engineering" "https://github.com/andyzoujm/representation-engineering.git" "5455d8a375d5fb1cb191f9ebcd089b7c21e9a31e"
 
-# ModPlural benchmark data (input/*.json) that pipeline/run_*.py --input points
-# to. Vanilla/MoE/ModPlural/Ethos baseline numbers are cited directly from
-# their papers, not reproduced, so nothing here imports this repo's code.
+# ModPlural benchmark data (input/*.json) that pipeline/run_*.py --input points to.
 clone_pinned "modular_pluralism" "https://github.com/BunsenFeng/modular_pluralism.git" "56bd05d2e6d824e93a5c0bee5ac26b56aeb299aa"
 
 echo ""

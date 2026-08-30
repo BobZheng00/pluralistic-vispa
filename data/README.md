@@ -14,3 +14,6 @@ fetched via `scripts/setup_dependencies.*`.
 
 Value-selection outputs (paper §3.1) from `value_selection/gate.py`, for
 both the ModPlural-derived splits and the VITAL-derived splits (`vital_*.json`).
+These predate a fix to how `gate.py` keys its output and use array position
+instead of the source dataset's `id` field; regenerate them with the current
+`gate.py` before using them to drive the pipeline.

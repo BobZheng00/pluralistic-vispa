@@ -48,7 +48,14 @@ def classify_dataset(data, classifier, labels, top_k, hypothesis_template):
         pairs = sorted(zip(out["labels"], out["scores"]), key=lambda p: p[1], reverse=True)
         top_k_predictions = [{"label": label, "score": score} for label, score in pairs[:top_k]]
 
-        record = {"sample_id": i, "text": text, "top_k_predictions": top_k_predictions}
+        # Key by the dataset's own "id" field when present, matching how
+        # pipeline/run_*.py look up items (item.get("id", idx)) — every
+        # modular_pluralism/ModPlural input file carries a non-positional id
+        # (e.g. 16311, "G_483"), so keying by array position `i` here would
+        # silently never match downstream and every sample would get zero
+        # selected values.
+        sample_id = item.get("id", i)
+        record = {"sample_id": sample_id, "text": text, "top_k_predictions": top_k_predictions}
         if gold is not None:
             record["ground_truth"] = gold
         results.append(record)

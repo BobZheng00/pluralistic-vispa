@@ -1,9 +1,16 @@
 """
-Loads the output of gate.py (or any classified_values-style JSON, including
-the pre-existing files under steering-pluralism/data/classified_values) into
-a {sample_id: [value_slug, ...]} mapping, for the steering/aggregation
-pipeline to know which values to generate steered comments for on each
-sample. See value_selection/gate.py for the schema this reads.
+Loads the output of gate.py into a {sample_id: [value_slug, ...]} mapping,
+for the steering/aggregation pipeline to know which values to generate
+steered comments for on each sample. `sample_id` here must match the `id`
+field pipeline/run_*.py reads from the dataset item (item.get("id", idx)) —
+gate.py keys its output the same way, so a gate run over a given input file
+joins correctly against that same file in pipeline/run_*.py.
+
+Note: the example files under data/classified_values/ predate this fix and
+key by array position instead of the dataset's `id` field (a relic of the
+original, lost selection script). They won't join correctly against
+modular_pluralism's actual input files — regenerate them with the current
+gate.py if you need real selections to run the pipeline against.
 """
 
 import json
