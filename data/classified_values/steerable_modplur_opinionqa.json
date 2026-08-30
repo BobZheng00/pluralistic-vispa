@@ -1,7 +1,7 @@
 {
   "metadata": {
     "model": "sileod/deberta-v3-base-tasksource-nli",
-    "data_path": "/scratch/wv64/sz4910/project/ConVA/modular_pluralism_scripts/data/steerable/opinionqa/steerable_test_opinionqa.json",
+    "data_path": "steerable_test_opinionqa.json",
     "num_samples": 1000,
     "top_k": 6,
     "value_labels": [

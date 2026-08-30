@@ -11,7 +11,7 @@ here to the original.
 
 from typing import List
 
-import torch
+from .aggregator import Aggregator
 
 
 def build_prompt(situation: str, comments: List[str]) -> str:
@@ -29,8 +29,7 @@ def build_prompt(situation: str, comments: List[str]) -> str:
 def aggregate(
     situation: str,
     comments: List[str],
-    aggregator_model,
-    aggregator_tokenizer,
+    aggregator: Aggregator,
     max_new_tokens: int = 300,
     temperature: float = 0.7,
 ) -> str:
@@ -38,31 +37,10 @@ def aggregate(
         return "No value-based perspectives were detected for this situation."
 
     prompt = build_prompt(situation, comments)
+    response = aggregator.generate_text(prompt, max_new_tokens=max_new_tokens, temperature=temperature)
 
-    if hasattr(aggregator_tokenizer, "apply_chat_template"):
-        try:
-            messages = [{"role": "user", "content": prompt}]
-            formatted_prompt = aggregator_tokenizer.apply_chat_template(
-                messages, tokenize=False, add_generation_prompt=True
-            )
-        except Exception:
-            formatted_prompt = prompt
-    else:
-        formatted_prompt = prompt
-
-    inputs = aggregator_tokenizer(formatted_prompt, return_tensors="pt").to(aggregator_model.device)
-    with torch.no_grad():
-        outputs = aggregator_model.generate(
-            **inputs,
-            max_new_tokens=max_new_tokens,
-            temperature=temperature,
-            do_sample=True,
-            pad_token_id=aggregator_tokenizer.eos_token_id,
-        )
-    response = aggregator_tokenizer.decode(outputs[0], skip_special_tokens=True)
-
-    if formatted_prompt in response:
-        response = response[len(formatted_prompt):].strip()
-    elif "Comment:" in response:
+    # Safety net in case the model echoes the "Comment:" cue instead of
+    # starting cleanly after it.
+    if "Comment:" in response:
         response = response.split("Comment:")[-1].strip()
     return response

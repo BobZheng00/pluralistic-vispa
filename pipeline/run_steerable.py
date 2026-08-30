@@ -31,7 +31,7 @@ from common import (  # noqa: E402
     add_steering_hyperparameter_args,
     fit_all_values,
     get_configured_backend,
-    load_aggregator_model,
+    load_aggregator,
     load_steering_model,
     parse_layers,
 )
@@ -56,7 +56,12 @@ def main():
     parser.add_argument("--selection", required=True)
     parser.add_argument("--output", required=True)
     parser.add_argument("--steering_model", default="meta-llama/Meta-Llama-3-8B-Instruct")
-    parser.add_argument("--aggregator_model", default="meta-llama/Llama-2-13b-chat-hf")
+    parser.add_argument(
+        "--aggregator_model", default="meta-llama/Llama-2-13b-chat-hf",
+        help="HF repo id (e.g. 'org/model') for a local model, or an OpenAI API model id "
+        "with no slash (e.g. 'gpt-4o') to use OpenAI's chat completions API instead — "
+        "requires OPENAI_API_KEY. See paper Table 8.",
+    )
     parser.add_argument("--backend", default="probe_calibrated", choices=["probe_calibrated", "averaging_caa", "projection_pca"])
     add_steering_hyperparameter_args(parser)
     parser.add_argument("--data_dir", default=str(Path(__file__).resolve().parent.parent / "data" / "value"))
@@ -102,7 +107,7 @@ def main():
     torch.cuda.empty_cache()
 
     print(f"Loading aggregator model: {args.aggregator_model}")
-    aggregator_model, aggregator_tokenizer = load_aggregator_model(args.aggregator_model)
+    aggregator = load_aggregator(args.aggregator_model)
 
     print("Selecting best-matching comment and generating final answers...")
     final_results = []
@@ -111,8 +116,8 @@ def main():
         comments = result["comments"]
 
         if args.task_type == "valuekaleidoscope":
-            selected, was_random, _ = select_comment_for_vrd(comments, item.get("vrd", ""), aggregator_model, aggregator_tokenizer)
-            answer = generate_final_answer(item["input"], selected, aggregator_model, aggregator_tokenizer)
+            selected, was_random, _ = select_comment_for_vrd(comments, item.get("vrd", ""), aggregator)
+            answer = generate_final_answer(item["input"], selected, aggregator)
             final_results.append({
                 "id": result["id"], "situation": item["situation"], "vrd": item.get("vrd"),
                 "selected_comment": selected, "was_randomly_selected": was_random, "output": answer,
@@ -120,9 +125,9 @@ def main():
                 "label_text": item.get("label_text"),
             })
         else:
-            selected, was_random, _ = select_comment_for_attribute(comments, item["attribute"], aggregator_model, aggregator_tokenizer)
+            selected, was_random, _ = select_comment_for_attribute(comments, item["attribute"], aggregator)
             answer, pred_distribution = generate_probability_distribution(
-                item["question"], item["options"], selected, item["attribute"], aggregator_model, aggregator_tokenizer,
+                item["question"], item["options"], selected, item["attribute"], aggregator,
             )
             final_results.append({
                 "id": result["id"], "question": item["question"], "attribute": item["attribute"],

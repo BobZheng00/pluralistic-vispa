@@ -1,7 +1,7 @@
 {
   "metadata": {
     "model": "sileod/deberta-v3-base-tasksource-nli",
-    "data_path": "/scratch/wv64/sz4910/project/ConVA/modular_pluralism_scripts/data/distributional/opinionqa/distributional_test_globalopinionqa.json",
+    "data_path": "distributional_test_globalopinionqa.json",
     "num_samples": 1000,
     "top_k": 6,
     "value_labels": [
@@ -41,7 +41,7 @@
   "results": [
     {
       "sample_id": 0,
-      "text": "Question: When it comes to Germany\u2019s decision-making in the European Union, do you think Germany has too much influence, has too little influence or has about the right amount of influence?\nOptions: A. Has too much influence B. Has too little influence C. Has about the right amount of influence D. DK/Refused\nAnswer:",
+      "text": "Question: When it comes to Germany’s decision-making in the European Union, do you think Germany has too much influence, has too little influence or has about the right amount of influence?\nOptions: A. Has too much influence B. Has too little influence C. Has about the right amount of influence D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -105,7 +105,7 @@
     },
     {
       "sample_id": 1,
-      "text": "Question: When it comes to Germany\u2019s decision-making in the European Union, do you think Germany has too much influence, has too little influence or has about the right amount of influence?\nOptions: A. Has too much influence B. Has too little influence C. Has about the right amount of influence D. DK/Refused\nAnswer:",
+      "text": "Question: When it comes to Germany’s decision-making in the European Union, do you think Germany has too much influence, has too little influence or has about the right amount of influence?\nOptions: A. Has too much influence B. Has too little influence C. Has about the right amount of influence D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -169,7 +169,7 @@
     },
     {
       "sample_id": 2,
-      "text": "Question: When it comes to Germany\u2019s decision-making in the European Union, do you think Germany has too much influence, has too little influence or has about the right amount of influence?\nOptions: A. Has too much influence B. Has too little influence C. Has about the right amount of influence D. DK/Refused\nAnswer:",
+      "text": "Question: When it comes to Germany’s decision-making in the European Union, do you think Germany has too much influence, has too little influence or has about the right amount of influence?\nOptions: A. Has too much influence B. Has too little influence C. Has about the right amount of influence D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -233,7 +233,7 @@
     },
     {
       "sample_id": 3,
-      "text": "Question: When it comes to Germany\u2019s decision-making in the European Union, do you think Germany has too much influence, has too little influence or has about the right amount of influence?\nOptions: A. Has too much influence B. Has too little influence C. Has about the right amount of influence D. DK/Refused\nAnswer:",
+      "text": "Question: When it comes to Germany’s decision-making in the European Union, do you think Germany has too much influence, has too little influence or has about the right amount of influence?\nOptions: A. Has too much influence B. Has too little influence C. Has about the right amount of influence D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -297,7 +297,7 @@
     },
     {
       "sample_id": 4,
-      "text": "Question: When it comes to Germany\u2019s decision-making in the European Union, do you think Germany has too much influence, has too little influence or has about the right amount of influence?\nOptions: A. Has too much influence B. Has too little influence C. Has about the right amount of influence D. DK/Refused\nAnswer:",
+      "text": "Question: When it comes to Germany’s decision-making in the European Union, do you think Germany has too much influence, has too little influence or has about the right amount of influence?\nOptions: A. Has too much influence B. Has too little influence C. Has about the right amount of influence D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -361,7 +361,7 @@
     },
     {
       "sample_id": 5,
-      "text": "Question: When it comes to Germany\u2019s decision-making in the European Union, do you think Germany has too much influence, has too little influence or has about the right amount of influence?\nOptions: A. Has too much influence B. Has too little influence C. Has about the right amount of influence D. DK/Refused\nAnswer:",
+      "text": "Question: When it comes to Germany’s decision-making in the European Union, do you think Germany has too much influence, has too little influence or has about the right amount of influence?\nOptions: A. Has too much influence B. Has too little influence C. Has about the right amount of influence D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -425,7 +425,7 @@
     },
     {
       "sample_id": 6,
-      "text": "Question: When it comes to Germany\u2019s decision-making in the European Union, do you think Germany has too much influence, has too little influence or has about the right amount of influence?\nOptions: A. Has too much influence B. Has too little influence C. Has about the right amount of influence D. DK/Refused\nAnswer:",
+      "text": "Question: When it comes to Germany’s decision-making in the European Union, do you think Germany has too much influence, has too little influence or has about the right amount of influence?\nOptions: A. Has too much influence B. Has too little influence C. Has about the right amount of influence D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -489,7 +489,7 @@
     },
     {
       "sample_id": 7,
-      "text": "Question: When it comes to Germany\u2019s decision-making in the European Union, do you think Germany has too much influence, has too little influence or has about the right amount of influence?\nOptions: A. Has too much influence B. Has too little influence C. Has about the right amount of influence D. DK/Refused\nAnswer:",
+      "text": "Question: When it comes to Germany’s decision-making in the European Union, do you think Germany has too much influence, has too little influence or has about the right amount of influence?\nOptions: A. Has too much influence B. Has too little influence C. Has about the right amount of influence D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -1577,7 +1577,7 @@
     },
     {
       "sample_id": 24,
-      "text": "Question: Please tell me if you approve or disapprove of the way Prime Minister Viktor Orb\u00e1n is handling each of the following areas. b. the refugee issue\nOptions: A. Approve B. Disapprove C. DK/Refused\nAnswer:",
+      "text": "Question: Please tell me if you approve or disapprove of the way Prime Minister Viktor Orbán is handling each of the following areas. b. the refugee issue\nOptions: A. Approve B. Disapprove C. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -19497,7 +19497,7 @@
     },
     {
       "sample_id": 304,
-      "text": "Question: What kind of influence is\u2026acting President Oleksandr Turchynov...having on the way things are going in Ukraine? Is the influence very good, somewhat good, somewhat bad or very bad in Ukraine? \nOptions: A. Very good B. Somewhat good C. Somewhat bad D. Very bad\nAnswer:",
+      "text": "Question: What kind of influence is…acting President Oleksandr Turchynov...having on the way things are going in Ukraine? Is the influence very good, somewhat good, somewhat bad or very bad in Ukraine? \nOptions: A. Very good B. Somewhat good C. Somewhat bad D. Very bad\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -19561,7 +19561,7 @@
     },
     {
       "sample_id": 305,
-      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs \u2013 a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
+      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs – a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -19625,7 +19625,7 @@
     },
     {
       "sample_id": 306,
-      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs \u2013 a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
+      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs – a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -19689,7 +19689,7 @@
     },
     {
       "sample_id": 307,
-      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs \u2013 a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
+      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs – a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -19753,7 +19753,7 @@
     },
     {
       "sample_id": 308,
-      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs \u2013 a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
+      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs – a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -19817,7 +19817,7 @@
     },
     {
       "sample_id": 309,
-      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs \u2013 a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
+      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs – a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -19881,7 +19881,7 @@
     },
     {
       "sample_id": 310,
-      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs \u2013 a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
+      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs – a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -19945,7 +19945,7 @@
     },
     {
       "sample_id": 311,
-      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs \u2013 a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
+      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs – a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -20009,7 +20009,7 @@
     },
     {
       "sample_id": 312,
-      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs \u2013 a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
+      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs – a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -20073,7 +20073,7 @@
     },
     {
       "sample_id": 313,
-      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs \u2013 a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
+      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs – a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -20137,7 +20137,7 @@
     },
     {
       "sample_id": 314,
-      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs \u2013 a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
+      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs – a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -20201,7 +20201,7 @@
     },
     {
       "sample_id": 315,
-      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs \u2013 a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
+      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs – a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -20265,7 +20265,7 @@
     },
     {
       "sample_id": 316,
-      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs \u2013 a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
+      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs – a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -20329,7 +20329,7 @@
     },
     {
       "sample_id": 317,
-      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs \u2013 a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
+      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs – a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -20393,7 +20393,7 @@
     },
     {
       "sample_id": 318,
-      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs \u2013 a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
+      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs – a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -20457,7 +20457,7 @@
     },
     {
       "sample_id": 319,
-      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs \u2013 a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
+      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs – a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -20521,7 +20521,7 @@
     },
     {
       "sample_id": 320,
-      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs \u2013 a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
+      "text": "Question: For each, tell me how much confidence you have in each leader to do the right thing regarding world affairs – a lot of confidence, some confidence, not too much confidence, or no confidence at all. h. Hungarian Prime Minister Viktor Orban\nOptions: A. A lot of confidence B. Some confidence C. Not too much confidence D. No confidence at all E. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -25705,7 +25705,7 @@
     },
     {
       "sample_id": 401,
-      "text": "Question: I\u2019d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
+      "text": "Question: I’d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -25769,7 +25769,7 @@
     },
     {
       "sample_id": 402,
-      "text": "Question: I\u2019d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
+      "text": "Question: I’d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -25833,7 +25833,7 @@
     },
     {
       "sample_id": 403,
-      "text": "Question: I\u2019d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
+      "text": "Question: I’d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -25897,7 +25897,7 @@
     },
     {
       "sample_id": 404,
-      "text": "Question: I\u2019d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
+      "text": "Question: I’d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -25961,7 +25961,7 @@
     },
     {
       "sample_id": 405,
-      "text": "Question: I\u2019d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
+      "text": "Question: I’d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -26025,7 +26025,7 @@
     },
     {
       "sample_id": 406,
-      "text": "Question: I\u2019d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
+      "text": "Question: I’d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -26089,7 +26089,7 @@
     },
     {
       "sample_id": 407,
-      "text": "Question: I\u2019d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
+      "text": "Question: I’d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -26153,7 +26153,7 @@
     },
     {
       "sample_id": 408,
-      "text": "Question: I\u2019d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
+      "text": "Question: I’d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -26217,7 +26217,7 @@
     },
     {
       "sample_id": 409,
-      "text": "Question: I\u2019d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
+      "text": "Question: I’d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -26281,7 +26281,7 @@
     },
     {
       "sample_id": 410,
-      "text": "Question: I\u2019d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
+      "text": "Question: I’d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -26345,7 +26345,7 @@
     },
     {
       "sample_id": 411,
-      "text": "Question: I\u2019d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
+      "text": "Question: I’d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -26409,7 +26409,7 @@
     },
     {
       "sample_id": 412,
-      "text": "Question: I\u2019d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
+      "text": "Question: I’d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -26473,7 +26473,7 @@
     },
     {
       "sample_id": 413,
-      "text": "Question: I\u2019d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
+      "text": "Question: I’d like your opinion about some possible international concerns. Do you think that ____ is a major threat, a minor threat or not a threat to your country? \ne. the Islamic militant group in Iraq and Syria known as ISIS\nOptions: A. Major threat B. Minor threat C. Not a threat D. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -26537,7 +26537,7 @@
     },
     {
       "sample_id": 414,
-      "text": "Question: Do you think the government of Ukraine respects the personal freedoms of its people, or don\u2019t you think so?\nOptions: A. Yes, respects personal freedoms B. No, does not respect personal freedoms\nAnswer:",
+      "text": "Question: Do you think the government of Ukraine respects the personal freedoms of its people, or don’t you think so?\nOptions: A. Yes, respects personal freedoms B. No, does not respect personal freedoms\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -26601,7 +26601,7 @@
     },
     {
       "sample_id": 415,
-      "text": "Question: Do you think the government of Ukraine respects the personal freedoms of its people, or don\u2019t you think so?\nOptions: A. Yes, respects personal freedoms B. No, does not respect personal freedoms\nAnswer:",
+      "text": "Question: Do you think the government of Ukraine respects the personal freedoms of its people, or don’t you think so?\nOptions: A. Yes, respects personal freedoms B. No, does not respect personal freedoms\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -39913,7 +39913,7 @@
     },
     {
       "sample_id": 623,
-      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations\u2026 b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
+      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations… b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -39977,7 +39977,7 @@
     },
     {
       "sample_id": 624,
-      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations\u2026 b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
+      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations… b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -40041,7 +40041,7 @@
     },
     {
       "sample_id": 625,
-      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations\u2026 b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
+      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations… b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -40105,7 +40105,7 @@
     },
     {
       "sample_id": 626,
-      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations\u2026 b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
+      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations… b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -40169,7 +40169,7 @@
     },
     {
       "sample_id": 627,
-      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations\u2026 b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
+      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations… b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -40233,7 +40233,7 @@
     },
     {
       "sample_id": 628,
-      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations\u2026 b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
+      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations… b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -40297,7 +40297,7 @@
     },
     {
       "sample_id": 629,
-      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations\u2026 b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
+      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations… b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -40361,7 +40361,7 @@
     },
     {
       "sample_id": 630,
-      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations\u2026 b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
+      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations… b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -40425,7 +40425,7 @@
     },
     {
       "sample_id": 631,
-      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations\u2026 b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
+      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations… b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -40489,7 +40489,7 @@
     },
     {
       "sample_id": 632,
-      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations\u2026 b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
+      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations… b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -40553,7 +40553,7 @@
     },
     {
       "sample_id": 633,
-      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations\u2026 b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
+      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations… b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -40617,7 +40617,7 @@
     },
     {
       "sample_id": 634,
-      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations\u2026 b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
+      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations… b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -40681,7 +40681,7 @@
     },
     {
       "sample_id": 635,
-      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations\u2026 b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
+      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations… b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -40745,7 +40745,7 @@
     },
     {
       "sample_id": 636,
-      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations\u2026 b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
+      "text": "Question: Please tell me whether you think the following statements apply to the United Nations or not. The United Nations… b. Promotes economic development\nOptions: A. Yes B. No C. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {
@@ -49321,7 +49321,7 @@
     },
     {
       "sample_id": 770,
-      "text": "Question: (Now I'd like to ask you about some political parties.) Please tell me if you have a very favorable, somewhat favorable, somewhat unfavorable or very unfavorable opinion of...the PRD (Partido de la Revoluci\u00f3n Democr\u00e1tica)\nOptions: A. Very favorable B. Somewhat favorable C. Somewhat unfavorable D. Very unfavorable E. DK/Refused\nAnswer:",
+      "text": "Question: (Now I'd like to ask you about some political parties.) Please tell me if you have a very favorable, somewhat favorable, somewhat unfavorable or very unfavorable opinion of...the PRD (Partido de la Revolución Democrática)\nOptions: A. Very favorable B. Somewhat favorable C. Somewhat unfavorable D. Very unfavorable E. DK/Refused\nAnswer:",
       "ground_truth": null,
       "top_k_predictions": [
         {

@@ -92,12 +92,21 @@ def load_steering_model(backend_name: str, model_path: str):
     return model, tokenizer
 
 
-def load_aggregator_model(model_path: str):
+def load_aggregator(model_path: str):
+    """Returns an aggregation.aggregator.Aggregator — OpenAIAggregator for
+    closed models (paper §3.3: the aggregator "only consumes the generated
+    comments and can therefore be closed-weight, e.g. ChatGPT"; Table 8
+    lists gpt-3.5-turbo/gpt-4o), HFAggregator otherwise."""
+    from aggregation.aggregator import HFAggregator, OpenAIAggregator, is_openai_model
+
+    if is_openai_model(model_path):
+        return OpenAIAggregator(model_path)
+
     model = AutoModelForCausalLM.from_pretrained(
         model_path, trust_remote_code=True, torch_dtype=torch.float16, device_map={"": "cuda:0"}
     ).cuda().eval()
     tokenizer = AutoTokenizer.from_pretrained(model_path)
-    return model, tokenizer
+    return HFAggregator(model, tokenizer)
 
 
 def load_contrastive_pairs(value_slug: str, data_dir: str) -> Tuple[List[str], List[str]]:

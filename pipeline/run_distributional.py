@@ -29,7 +29,7 @@ from common import (  # noqa: E402
     add_steering_hyperparameter_args,
     fit_all_values,
     get_configured_backend,
-    load_aggregator_model,
+    load_aggregator,
     load_steering_model,
     parse_layers,
 )
@@ -53,7 +53,12 @@ def main():
     parser.add_argument("--selection", required=True)
     parser.add_argument("--output", required=True)
     parser.add_argument("--steering_model", default="meta-llama/Meta-Llama-3-8B-Instruct")
-    parser.add_argument("--aggregator_model", default="meta-llama/Llama-2-13b-chat-hf")
+    parser.add_argument(
+        "--aggregator_model", default="meta-llama/Llama-2-13b-chat-hf",
+        help="HF repo id (e.g. 'org/model') for a local model, or an OpenAI API model id "
+        "with no slash (e.g. 'gpt-4o') to use OpenAI's chat completions API instead — "
+        "requires OPENAI_API_KEY. See paper Table 8.",
+    )
     parser.add_argument("--backend", default="probe_calibrated", choices=["probe_calibrated", "averaging_caa", "projection_pca"])
     add_steering_hyperparameter_args(parser)
     parser.add_argument("--data_dir", default=str(Path(__file__).resolve().parent.parent / "data" / "value"))
@@ -95,7 +100,7 @@ def main():
     torch.cuda.empty_cache()
 
     print(f"Loading aggregator model: {args.aggregator_model}")
-    aggregator_model, aggregator_tokenizer = load_aggregator_model(args.aggregator_model)
+    aggregator = load_aggregator(args.aggregator_model)
 
     print("Getting per-value distributions and aggregating...")
     final_results = []
@@ -106,7 +111,7 @@ def main():
         per_value_distributions = []
         for value_slug, comment in result["comments"].items():
             dist = get_probability_distribution(
-                comment, result["question"], item["options"], aggregator_model, aggregator_tokenizer, attribute=attribute,
+                comment, result["question"], item["options"], aggregator, attribute=attribute,
             )
             per_value_distributions.append(dist)
 

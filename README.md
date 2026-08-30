@@ -21,7 +21,11 @@ pip install -r requirements.txt
 # anything in steering/.
 bash scripts/setup_dependencies.sh      # or scripts/setup_dependencies.ps1 on Windows
 
-export OPENAI_API_KEY="..."             # needed for value selection's aggregation-stage LLM calls and contrastive data generation
+export OPENAI_API_KEY="..."             # needed for steering/contrastive_data/generate_pairs.py and for --aggregator_model gpt-4o / gpt-3.5-turbo
+
+# meta-llama/* and google/gemma-* checkpoints are gated on HuggingFace: accept
+# each model's license on its model page, then authenticate once with
+huggingface-cli login                   # or set HF_TOKEN
 ```
 
 ## Repository layout

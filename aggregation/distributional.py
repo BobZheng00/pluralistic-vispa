@@ -6,9 +6,9 @@ distribution. Prompts match the original modular_pluralism baseline
 (ours_distributional.py) unchanged.
 """
 
-from typing import Dict, List, Optional, Tuple
+from typing import List, Optional
 
-import torch
+from .aggregator import Aggregator
 
 
 def build_prompt(comment: str, question: str, attribute: Optional[str] = None) -> str:
@@ -23,33 +23,12 @@ def get_probability_distribution(
     comment: str,
     question: str,
     options: List[str],
-    aggregator_model,
-    aggregator_tokenizer,
+    aggregator: Aggregator,
     attribute: Optional[str] = None,
 ) -> List[float]:
     prompt = build_prompt(comment, question, attribute=attribute)
-    inputs = aggregator_tokenizer(prompt, return_tensors="pt").to(aggregator_model.device)
-
-    option_letters = {i: chr(65 + i) for i in range(len(options))}
-    pred_distribution = [0.0] * len(options)
-
-    with torch.no_grad():
-        logits = aggregator_model(**inputs).logits
-        probs = torch.nn.functional.softmax(logits, dim=-1)[0, -1, :]
-        top = probs.topk(10)
-        token_probs = {aggregator_tokenizer.decode(t): p.item() for t, p in zip(top.indices, top.values)}
-
-    for i in range(len(options)):
-        letter = option_letters[i]
-        for token, p in token_probs.items():
-            if letter == token.strip():
-                pred_distribution[i] += p
-                break
-
-    total = sum(pred_distribution)
-    if total == 0:
-        return [1.0 / len(options)] * len(options)
-    return [x / total for x in pred_distribution]
+    _, pred_distribution = aggregator.option_probabilities(prompt, options)
+    return pred_distribution
 
 
 def aggregate_distributions(distributions: List[List[float]]) -> List[float]:
