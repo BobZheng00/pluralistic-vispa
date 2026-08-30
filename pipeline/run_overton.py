@@ -6,7 +6,7 @@ End-to-end Overton pipeline (paper §3.1-3.3): automatic value selection
 
 Usage:
     python run_overton.py \\
-        --input ../../modular_pluralism/input/overton_test_valuekaleidoscope_small.json \\
+        --input ../third_party/modular_pluralism/input/overton_test_valuekaleidoscope_small.json \\
         --selection path/to/gate_output.json \\
         --output results/overton_results.json
 """

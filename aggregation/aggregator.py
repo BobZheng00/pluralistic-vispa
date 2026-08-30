@@ -35,11 +35,21 @@ class Aggregator(ABC):
         system: Optional[str] = None,
         max_new_tokens: int = 20,
         temperature: float = 0.1,
+        skip_generation: bool = False,
     ) -> Tuple[str, List[float]]:
         """Returns (raw text response, normalized probability per option),
         matching each option to the model's predicted probability of
         leading its response with that option's letter (A, B, C, ...) —
-        used by Steerable/OpinionQA and Distributional mode."""
+        used by Steerable/OpinionQA and Distributional mode.
+
+        `skip_generation`: the original Steerable/OpinionQA script also
+        generated a text response alongside the distribution; the original
+        Distributional script only ever needed the distribution and never
+        generated text. Pass True for the latter case for HFAggregator to
+        skip a wasted .generate() call — this doesn't change the returned
+        distribution (computed independently via a forward pass either
+        way), just avoids paying for a discarded generation. Ignored by
+        OpenAIAggregator, which gets both from one API call regardless."""
 
 
 def _option_letters(options: List[str]) -> dict:
@@ -83,8 +93,12 @@ class HFAggregator(Aggregator):
         generated_ids = outputs[0][len(inputs.input_ids[0]):]
         return self.tokenizer.decode(generated_ids, skip_special_tokens=True).strip()
 
-    def option_probabilities(self, prompt, options, system=None, max_new_tokens=20, temperature=0.1):
-        response = self.generate_text(prompt, system=system, max_new_tokens=max_new_tokens, temperature=temperature)
+    def option_probabilities(self, prompt, options, system=None, max_new_tokens=20, temperature=0.1, skip_generation=False):
+        response = (
+            ""
+            if skip_generation
+            else self.generate_text(prompt, system=system, max_new_tokens=max_new_tokens, temperature=temperature)
+        )
 
         # Probability extraction uses the RAW prompt (no chat template): a
         # chat template's special tokens shift what the next-token
@@ -125,7 +139,9 @@ class OpenAIAggregator(Aggregator):
         )
         return (response.choices[0].message.content or "").strip()
 
-    def option_probabilities(self, prompt, options, system=None, max_new_tokens=20, temperature=0.1):
+    def option_probabilities(self, prompt, options, system=None, max_new_tokens=20, temperature=0.1, skip_generation=False):
+        # skip_generation is a no-op here: one API call already returns both
+        # the text and the logprobs, so there's nothing extra to skip.
         response = self.client.chat.completions.create(
             model=self.model_name,
             messages=self._messages(prompt, system),

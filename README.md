@@ -12,7 +12,7 @@ three pluralistic alignment modes: `Overton`, `Steerable`, and
 ## Setup
 
 ```bash
-git clone <this-repo>
+git clone https://github.com/BobZheng00/pluralistic-vispa.git
 cd pluralistic-vispa
 pip install -r requirements.txt
 
