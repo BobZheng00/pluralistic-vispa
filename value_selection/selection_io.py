@@ -6,11 +6,10 @@ field pipeline/run_*.py reads from the dataset item (item.get("id", idx)) —
 gate.py keys its output the same way, so a gate run over a given input file
 joins correctly against that same file in pipeline/run_*.py.
 
-Note: the example files under data/classified_values/ predate this fix and
-key by array position instead of the dataset's `id` field (a relic of the
-original, lost selection script). They won't join correctly against
-modular_pluralism's actual input files — regenerate them with the current
-gate.py if you need real selections to run the pipeline against.
+The example files under data/classified_values/ key by array position instead
+of the dataset's `id` field, so they won't join correctly against
+modular_pluralism's input files. Run gate.py over the matching input file to
+create compatible selections for the pipeline.
 """
 
 import json

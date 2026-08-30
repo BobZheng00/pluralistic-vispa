@@ -42,14 +42,11 @@ class Aggregator(ABC):
         leading its response with that option's letter (A, B, C, ...) —
         used by Steerable/OpinionQA and Distributional mode.
 
-        `skip_generation`: the original Steerable/OpinionQA script also
-        generated a text response alongside the distribution; the original
-        Distributional script only ever needed the distribution and never
-        generated text. Pass True for the latter case for HFAggregator to
-        skip a wasted .generate() call — this doesn't change the returned
-        distribution (computed independently via a forward pass either
-        way), just avoids paying for a discarded generation. Ignored by
-        OpenAIAggregator, which gets both from one API call regardless."""
+        `skip_generation`: pass True when only the distribution is needed.
+        HFAggregator then skips the .generate() call without changing the
+        distribution, which is computed independently via a forward pass.
+        OpenAIAggregator ignores this option because one API call returns
+        both outputs."""
 
 
 def _option_letters(options: List[str]) -> dict:

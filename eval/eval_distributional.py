@@ -8,11 +8,9 @@ this same "most likely correctness" metric there — pass
 --dataset_type steerable_opinionqa for pipeline/run_steerable.py
 --task_type opinionqa output).
 
-Note: an earlier version of this script read a different field name per
-producing backend (conva_pred_distribution vs. caa_pred_distribution) —
-that split doesn't exist here since this repo's pipeline/run_*.py scripts
-always write `pred_distribution` regardless of which steering backend
-produced it (chosen via --backend, not baked into the field name).
+All pipeline/run_*.py scripts write `pred_distribution` regardless of which
+steering backend produced it; the backend is chosen via --backend rather
+than encoded in the field name.
 
 Usage:
     python eval_distributional.py --input_file results/distributional_moralchoice_results.json --dataset_type moralchoice

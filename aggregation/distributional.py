@@ -27,9 +27,8 @@ def get_probability_distribution(
     attribute: Optional[str] = None,
 ) -> List[float]:
     prompt = build_prompt(comment, question, attribute=attribute)
-    # The original script never generated text here, only ever used the
-    # distribution — skip_generation avoids paying for a discarded
-    # generation on every call (see Aggregator.option_probabilities).
+    # Only the distribution is used here, so skip the discarded text
+    # generation (see Aggregator.option_probabilities).
     _, pred_distribution = aggregator.option_probabilities(prompt, options, skip_generation=True)
     return pred_distribution
 

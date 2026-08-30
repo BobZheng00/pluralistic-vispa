@@ -3,12 +3,8 @@ Averaging-based steering (paper Section 3.2.2, Appendix C.2) — the
 mean-activation-difference instantiation, in the spirit of Contrastive
 Activation Addition (Rimsky et al., ACL 2024).
 
-Important attribution note: this bridges ConVA's own CAA baseline
-(ConVA/src/baselines/caa.py, hr-jin/ConVA, ACL 2025), which VISPA actually
-used, NOT the original nrimsky/CAA repository directly. ConVA's `caa.py`
-reimplements the same mean-difference idea; it is functionally comparable to
-Rimsky et al.'s method but is a distinct implementation. Cite both papers if
-you draw on the numbers this backend produces.
+Uses ConVA's CAA baseline implementation
+(ConVA/src/baselines/caa.py; Jin et al., ACL 2025).
 
 Direction: v_V = mean(h(x+)) - mean(h(x-)) over the value's context-controlled
 contrastive pairs, per layer (ConVA/src/baselines/caa.py: get_diff_acts()).

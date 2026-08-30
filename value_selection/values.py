@@ -4,14 +4,12 @@ VISPA value taxonomy (paper Table 6): 31 values across 5 conceptual origins.
 Each entry is (slug, display_label, category).
 
 `slug` matches the filename stem used for the context-controlled contrastive
-datasets, data/value/{slug}_context_controlled.csv. It is kept exactly as-is
-from those existing files, including two historical inconsistencies:
-"self-direction" uses a hyphen rather than an underscore, and "spiritual" is
-the slug for the "spirituality" value.
+datasets, data/value/{slug}_context_controlled.csv. The expected spellings
+include "self-direction" with a hyphen and "spiritual" as the slug for the
+"spirituality" value.
 
-`display_label` matches the value_labels used in the existing
-data/classified_values/*.json outputs, and is what should be passed as the
-NLI candidate label text.
+`display_label` is the value label used in data/classified_values/*.json and
+is what should be passed as the NLI candidate label text.
 """
 
 SCHWARTZ_BASIC_HUMAN_VALUES = "Schwartz's Basic Human Values"

@@ -3,10 +3,7 @@ Overton mode aggregation (paper §3.3): the main LLM summarises a response
 using every selected value's steered comment.
 
 Prompt matches the original modular_pluralism baseline (ours_overton.py),
-kept identical for comparability. Note this wording was found to have
-drifted in earlier working code (an extra "concise ethical analysis using
-multiple frameworks" clause had been added experimentally); it's reverted
-here to the original.
+kept identical for comparability.
 """
 
 from typing import List
